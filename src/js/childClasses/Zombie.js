@@ -2,8 +2,8 @@ import Character from '../Character.js';
 
 export default class ZombieCharacter extends Character {
   constructor(name, type) {
-    if(type !== 'Zombie'){
-      throw error;
+    if (type !== 'Zombie') {
+      throw Error;
     }
     super(name, type);
     this.type = type;

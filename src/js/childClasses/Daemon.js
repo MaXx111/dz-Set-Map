@@ -2,8 +2,8 @@ import Character from '../Character.js';
 
 export default class DaemonCharacter extends Character {
   constructor(name, type) {
-    if(type !== 'Daemon'){
-      throw error;
+    if (type !== 'Daemon') {
+      throw Error;
     }
     super(name, type);
     this.type = type;

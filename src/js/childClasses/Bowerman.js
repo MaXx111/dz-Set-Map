@@ -2,8 +2,8 @@ import Character from '../Character.js';
 
 export default class BowermanCharacter extends Character {
   constructor(name, type) {
-    if(type !== 'Bowerman'){
-      throw error;
+    if (type !== 'Bowerman') {
+      throw Error;
     }
     super(name, type);
     this.type = type;
