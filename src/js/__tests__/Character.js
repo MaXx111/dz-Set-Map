@@ -4,9 +4,6 @@ test.each([
   ['someting', { name: 'Воин', type: 'Daemon' }, {
     health: 100, level: 1, name: 'Воин', type: 'Daemon',
   }],
-  ['someting', { name: 'н', type: 'Daemon' }, 'error'],
-  ['someting', { name: 'Чернокнижник', type: 'emon' }, 'error'],
-  ['someting', { name: 'Чижник', type: 'emon' }, 'error'],
 ])(
   ('Should get right characteristic for hero '),
   (something, amount, expected) => {
@@ -14,3 +11,15 @@ test.each([
     expect(result).toEqual(expected);
   },
 );
+
+test('Should throw error', () => {
+  expect(() => new Character('Чернокнижник', 'emon')).toThrow();
+});
+
+test('Should throw error', () => {
+  expect(() => new Character('Чижник', 'emon')).toThrow();
+});
+
+test('Should throw error', () => {
+  expect(() => new Character('к', 'Daemon')).toThrow();
+});

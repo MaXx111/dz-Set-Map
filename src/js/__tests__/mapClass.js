@@ -12,9 +12,7 @@ test('Should throw error', () => {
   const errorCase = new ErrorRepository();
   errorCase.add(404, 'be be be');
   errorCase.add(202, 'bebebe');
-  errorCase.add(202, 'veveve');
-  const expct = 200;
-  expect(expct).toEqual(Error);
+  expect(() => errorCase.add(202, 'veveve')).toThrow();
 });
 
 test('Should translate error', () => {
@@ -29,6 +27,5 @@ test('Should throw error', () => {
   const errorCase = new ErrorRepository();
   errorCase.add(404, 'be be be');
   errorCase.add(202, 'bebebe');
-  const expct = errorCase.translate(402);
-  expect(expct).toEqual('bebebe');
+  expect(() => errorCase.translate(402)).toThrow();
 });

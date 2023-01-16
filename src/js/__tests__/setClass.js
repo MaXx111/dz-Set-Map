@@ -18,9 +18,7 @@ test('Should throw error', () => {
   const member1 = new BowermanCharacter('justABoy', 'Bowerman');
   const team = new Team();
   team.add(member1);
-  team.add(member1);
-  const expct = team.members.size;
-  expect(expct).toEqual(Error);
+  expect(() => team.add(member1)).toThrow();
 });
 
 test('Should add all members', () => {
